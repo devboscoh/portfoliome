@@ -7,21 +7,21 @@ const PhotoAlbum = () => {
   const [photos, setPhotos] = useState([
     {
       id: 1,
-      url: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      url: '../../dist/images/Environmental conservation.jpg',
       title: 'Environmental Conservation',
       description: 'Community tree planting initiative',
       category: 'Environment'
     },
     {
       id: 2,
-      url: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      url: '../../dist/images/Waste management.jpeg',
       title: 'Waste Management',
       description: 'Organizing community clean-up activities',
       category: 'Environment'
     },
     {
       id: 3,
-      url: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      url: '../../dist/images/Mern stack grad.jpeg',
       title: 'Software Development',
       description: 'Working on web development projects',
       category: 'Technology'
