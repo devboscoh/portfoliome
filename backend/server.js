@@ -1,6 +1,5 @@
 require('dotenv').config();
 const express = require('express');
-const path = require('path');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
@@ -10,7 +9,14 @@ const contactRoutes = require('./routes/contactRoutes');
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:5173', // Vite dev server
+    'http://localhost:3000', // Create React App
+    process.env.CLIENT_URL // Your Vercel frontend URL
+  ].filter(Boolean),
+  credentials: true
+}));
 app.use(helmet());
 app.use(morgan('dev'));
 app.use(express.json());
@@ -29,8 +35,7 @@ app.get('/api/profile', (req, res) => {
       phone: "+254715640443",
       email: "boscobrilli8@gmail.com"
     },
-    objective:
-      "An organized, motivated, and adaptable individual seeking to enhance my environment while growing alongside all stakeholders...",
+    objective: "An organized, motivated, and adaptable individual seeking to enhance my environment while growing alongside all stakeholders...",
     skills: [
       "Proficient in MS Word, Excel, PowerPoint, and Internet applications",
       "Full stack web developer, MERN stack tech stack",
@@ -66,13 +71,14 @@ app.get('/api/profile', (req, res) => {
   });
 });
 
-// Serve frontend (AFTER API routes)
-const frontendPath = path.join(__dirname, '../frontend/dist');
-app.use(express.static(frontendPath));
+// Health check endpoint
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'OK', message: 'Backend is running' });
+});
 
-// SPA fallback — Express 5 SAFE (NO wildcards)
-app.use((req, res) => {
-  res.sendFile(path.join(frontendPath, 'index.html'));
+// Catch-all for undefined API routes
+app.all('/api/*', (req, res) => {
+  res.status(404).json({ error: 'API endpoint not found' });
 });
 
 const PORT = process.env.PORT || 5000;
