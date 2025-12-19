@@ -1,10 +1,10 @@
 /* App.css - Portfolio Global Styles */
 /* Remove all default Vite styles and add portfolio-specific styles */
 
-/* Custom component styles that need global scope */
+/* Custom component styles that need global scope
 .image-mask {
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
-}
+} */
 
 /* Smooth scrolling for anchor links */
 html {
