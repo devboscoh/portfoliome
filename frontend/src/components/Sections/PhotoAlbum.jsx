@@ -7,21 +7,21 @@ const PhotoAlbum = () => {
   const [photos, setPhotos] = useState([
     {
       id: 1,
-      url: 'frontend/public/images/Tree planting.png',
+      url: '/images/Tree planting.png',
       title: 'Environmental Conservation',
       description: 'Community tree planting initiative',
       category: 'Environment'
     },
     {
       id: 2,
-      url: '../../dist/images/Waste management.jpeg',
+      url: '/images/Waste management.jpeg',
       title: 'Waste Management',
       description: 'Organizing community clean-up activities',
       category: 'Environment'
     },
     {
       id: 3,
-      url: '../../dist/images/Mern stack grad.jpeg',
+      url: '/images/Mern stack grad.jpeg',
       title: 'Software Development',
       description: 'Working on web development projects',
       category: 'Technology'
