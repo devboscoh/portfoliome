@@ -6,7 +6,7 @@ const Hero = () => {
   const [photoLoaded, setPhotoLoaded] = useState(false);
 
   const contactInfo = [
-    { icon: <Mail size={18} />, text: "boscobrilli8@gmail.com", href: "mailto:boscobrilli8@gmail.com" },
+    { icon: <Mail size={18} />, text: "dev.boscoh@gmail.com", href: "mailto:dev.boscoh@gmail.com" },
     { icon: <Phone size={18} />, text: "+254 715 640 443", href: "tel:+254715640443" },
     { icon: <MapPin size={18} />, text: "Nairobi, Kenya", href: "#" }
   ];
@@ -124,7 +124,7 @@ const Hero = () => {
                 </div>
                 <div>
                   <p className="text-[10px] font-bold text-slate-400 uppercase">Current Role</p>
-                  <p className="text-sm font-bold text-slate-900">Ward Environment Officer</p>
+                  <p className="text-sm font-bold text-slate-900">Environment Officer</p>
                 </div>
               </div>
             </div>
